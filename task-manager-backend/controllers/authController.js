@@ -94,12 +94,12 @@ const token = jwt.sign(
   { expiresIn: "1d" }
 );
 
+
 res.cookie("token", token, {
   httpOnly: true,
-  secure: false,
-  sameSite: "lax"
+  secure: true,
+  sameSite: "none"
 });
-
 
 res.json({
   success: true,

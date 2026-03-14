@@ -14,11 +14,14 @@ connectDB();
 
 app.use(express.json());
 
+
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: [
+    "http://localhost:3000",
+    "https://full-stack-project-task-manager.onrender.com"
+  ],
   credentials: true
 }));
-
 app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
